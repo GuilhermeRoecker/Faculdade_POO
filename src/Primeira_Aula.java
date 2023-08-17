@@ -50,4 +50,3 @@ public class Primeira_Aula {
 		JOptionPane.showMessageDialog(null, resultado);
 	}
 }
-
