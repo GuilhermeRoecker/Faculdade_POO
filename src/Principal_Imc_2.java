@@ -24,6 +24,6 @@ public class Principal_Imc_2 {
                 }
                 JOptionPane.showMessageDialog(null, result);
             }
-        } while (op != 3);
+        } while (op != 3); 
     }
 }
