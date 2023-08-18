@@ -49,6 +49,7 @@ public class Pessoa{
         return avaliacao;
 
     }
+    
     String exibirDados(){
         return nome + " - " + calculaImc() + " - " + avalicao() + "\n";
         }
