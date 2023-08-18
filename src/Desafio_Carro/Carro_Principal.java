@@ -55,25 +55,24 @@ public class Carro_Principal {
 
                     if(selecionaMarca.equals(c1.fabricante)){
                     MarcaSelecionada += c1.exibirCarros();
-                    JOptionPane.showMessageDialog(null, MarcaSelecionada);
+                    
                 }
-              }
+              } JOptionPane.showMessageDialog(null, MarcaSelecionada);
             }
             
             // Pesquisa por periodo de ano
             if(op == 5){
                 int anoIni = Integer.parseInt(JOptionPane.showInputDialog(null , "Qual o ano Inicial?"));
-                int anoFin = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano final?"));
-                String anoCarro = " ";
+                int anoFin = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano final?"));                
+                String resultado = "";
+
                 for(Carro c2: carros){
-                    do {
-                        if(anoIni >= c2.ano){
-                        anoCarro += c2.exibirCarros();
-                        
-                        } JOptionPane.showMessageDialog(null, anoCarro);
-                    }while(anoFin <= c2.ano);
- 
-                }
+
+                        if(c2.ano >= anoIni && c2.ano  <= anoFin ){                        
+                        resultado += c2.exibirCarros();
+                            
+                } 
+              } JOptionPane.showMessageDialog(null, resultado); 
             }            
         }while (op != 6);
 
