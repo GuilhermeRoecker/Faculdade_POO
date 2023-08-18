@@ -1,6 +1,6 @@
 package Desafio_Carro;
 import javax.swing.JOptionPane;
-import javafx.scene.chart.PieChart.Data;
+
 
 public class Carro {
     String carro;
