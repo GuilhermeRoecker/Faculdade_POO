@@ -64,12 +64,14 @@ public class Carro_Principal {
             if(op == 5){
                 int anoIni = Integer.parseInt(JOptionPane.showInputDialog(null , "Qual o ano Inicial?"));
                 int anoFin = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano final?"));
-                int anoCarro = 0;
+                String anoCarro = " ";
                 for(Carro c2: carros){
-                    if (anoCarro >= anoIni && anoCarro <= anoFin){
+                    do {
+                        if(anoIni >= c2.ano){
+                        anoCarro += c2.exibirCarros();
                         
-                        JOptionPane.showMessageDialog(null, anoCarro);
-                    }
+                        } JOptionPane.showMessageDialog(null, anoCarro);
+                    }while(anoFin <= c2.ano);
  
                 }
             }            
