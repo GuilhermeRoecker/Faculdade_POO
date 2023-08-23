@@ -18,6 +18,6 @@ public class Carro {
     }
 
 String exibirCarros(){
-    return carro + " - " + fabricante + " - " + cor + " - " + ano + "\n";
+    return carro + "\n Fabricante: " + fabricante + "\n Cor: " + cor + "\n Ano: " + ano + "\n";
     }  
 }

@@ -41,9 +41,11 @@ public class Carro_Principal {
 
                 if(selecionarCor.equals(c.cor)){
                 corSelecionada += c.exibirCarros();
-                JOptionPane.showMessageDialog(null, corSelecionada);
-                    }
-                }
+                
+                    } else{
+                        corSelecionada = "Nenhum registro Encontrado";
+                    } 
+                } JOptionPane.showMessageDialog(null, corSelecionada);
             }
 
             // Pesquisa por Marca
@@ -56,6 +58,8 @@ public class Carro_Principal {
                     if(selecionaMarca.equals(c1.fabricante)){
                     MarcaSelecionada += c1.exibirCarros();
                     
+                } else{
+                    MarcaSelecionada = "Nenhum registro Encontrado";
                 }
               } JOptionPane.showMessageDialog(null, MarcaSelecionada);
             }
@@ -71,7 +75,9 @@ public class Carro_Principal {
                         if(c2.ano >= anoIni && c2.ano  <= anoFin ){                        
                         resultado += c2.exibirCarros();
                             
-                } 
+                } else {
+                    resultado = "Nenhum Registro Encontrado";
+                }
               } JOptionPane.showMessageDialog(null, resultado); 
             }            
         }while (op != 6);
