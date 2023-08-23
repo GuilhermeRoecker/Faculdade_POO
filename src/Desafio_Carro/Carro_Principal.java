@@ -36,16 +36,20 @@ public class Carro_Principal {
             if (op == 3){
               String selecionarCor = JOptionPane.showInputDialog(null, "Qual a cor?");
               String corSelecionada = " ";
+              Boolean temcor = false;
 
               for (Carro c: carros){
 
-                if(selecionarCor.equals(c.cor)){
+                if(selecionarCor.equalsIgnoreCase(c.cor)){
                 corSelecionada += c.exibirCarros();
-                
-                    } else{
-                        corSelecionada = "Nenhum registro Encontrado";
-                    } 
-                } JOptionPane.showMessageDialog(null, corSelecionada);
+                temcor = true;
+                    }
+                    
+                } if(!temcor){
+                      JOptionPane.showMessageDialog(null, "Não possui nenhum carro com essa cor");
+                  }else{
+                      JOptionPane.showMessageDialog(null, corSelecionada);
+                  }
             }
 
             // Pesquisa por Marca
@@ -53,15 +57,20 @@ public class Carro_Principal {
              
                 String selecionaMarca = JOptionPane.showInputDialog(null, "Qual a marca?");
                 String MarcaSelecionada = " ";
+                Boolean temMarca =false;
+
                 for (Carro c1: carros){
 
-                    if(selecionaMarca.equals(c1.fabricante)){
+                    if(selecionaMarca.equalsIgnoreCase(c1.fabricante)){
                     MarcaSelecionada += c1.exibirCarros();
-                    
-                } else{
-                    MarcaSelecionada = "Nenhum registro Encontrado";
+                    temMarca =true;  
+                    }
+
+              } if(!temMarca){
+                JOptionPane.showMessageDialog(null, "Não possui nenhum carro com essa marca");
+              }else{
+                 JOptionPane.showMessageDialog(null, MarcaSelecionada);
                 }
-              } JOptionPane.showMessageDialog(null, MarcaSelecionada);
             }
             
             // Pesquisa por periodo de ano
@@ -75,8 +84,6 @@ public class Carro_Principal {
                         if(c2.ano >= anoIni && c2.ano  <= anoFin ){                        
                         resultado += c2.exibirCarros();
                             
-                } else {
-                    resultado = "Nenhum Registro Encontrado";
                 }
               } JOptionPane.showMessageDialog(null, resultado); 
             }            
