@@ -86,8 +86,8 @@ public class Carro_Principal {
                             
                 }
               } JOptionPane.showMessageDialog(null, resultado); 
-            }            
-        }while (op != 6);
+            }
 
+        } while (op != 6);
     }
 }
