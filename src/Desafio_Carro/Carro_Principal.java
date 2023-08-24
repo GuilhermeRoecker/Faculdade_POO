@@ -40,11 +40,12 @@ public class Carro_Principal {
 
               for (Carro c: carros){
 
+                //Verifica se possui carro cadastrado conforme criterio
                 if(selecionarCor.equalsIgnoreCase(c.cor)){
                 corSelecionada += c.exibirCarros();
                 temcor = true;
                     }
-                    
+                // Tomada de decisão dependendp do paramentro passado pelo usuario    
                 } if(!temcor){
                       JOptionPane.showMessageDialog(null, "Não possui nenhum carro com essa cor");
                   }else{
@@ -60,15 +61,18 @@ public class Carro_Principal {
                 Boolean temMarca =false;
 
                 for (Carro c1: carros){
+   
+                 //Verifica se possui carro cadastrado conforme criterio
+                 if(selecionaMarca.equalsIgnoreCase(c1.fabricante)){
+                 MarcaSelecionada += c1.exibirCarros();
+                 temMarca =true;  
+                }
+              }
 
-                    if(selecionaMarca.equalsIgnoreCase(c1.fabricante)){
-                    MarcaSelecionada += c1.exibirCarros();
-                    temMarca =true;  
-                    }
-
-              } if(!temMarca){
+               // Tomada de decisão dependendp do paramentro passado pelo usuario
+               if(!temMarca){
                 JOptionPane.showMessageDialog(null, "Não possui nenhum carro com essa marca");
-              }else{
+               } else{
                  JOptionPane.showMessageDialog(null, MarcaSelecionada);
                 }
             }
@@ -78,14 +82,19 @@ public class Carro_Principal {
                 int anoIni = Integer.parseInt(JOptionPane.showInputDialog(null , "Qual o ano Inicial?"));
                 int anoFin = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano final?"));                
                 String resultado = "";
-
+                boolean temAno = false;
                 for(Carro c2: carros){
-
-                        if(c2.ano >= anoIni && c2.ano  <= anoFin ){                        
-                        resultado += c2.exibirCarros();
-                            
+                    if(c2.ano >= anoIni && c2.ano  <= anoFin ){                        
+                    resultado += c2.exibirCarros();   
+                    temAno= true;                         
                 }
-              } JOptionPane.showMessageDialog(null, resultado); 
+
+              }                // Tomada de decisão dependendp do paramentro passado pelo usuario
+               if(!temAno){
+                JOptionPane.showMessageDialog(null, "Não possui nenhum carro nesse periodo de ano");
+               } else{
+                 JOptionPane.showMessageDialog(null, resultado);
+                }
             }
 
         } while (op != 6);
