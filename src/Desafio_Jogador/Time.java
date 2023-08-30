@@ -1,4 +1,7 @@
 package Desafio_Jogador;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 public class Time {
 	
@@ -47,7 +50,4 @@ public class Time {
 	public void setJogadores(ArrayList<Jogador> jogadores) {
 		this.jogadores = jogadores;
 	}
-	
-	
-
 }
