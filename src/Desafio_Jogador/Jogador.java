@@ -36,7 +36,4 @@ public class Jogador {
 	public void setGols(int gols) {
 		this.gols = gols;
 	}
-	
-	
-
 }
