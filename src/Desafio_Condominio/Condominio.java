@@ -1,0 +1,54 @@
+package Desafio_Condominio;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class Condominio {
+        public static void main(String[] args) {
+        
+		ArrayList<Apartamento> apartamentos = new ArrayList<Apartamento>();
+		ArrayList<Despesa> despesas = new ArrayList<Despesa>();
+		
+		String menu = "1 - Cadastrar Apartamento \n"
+				    + "2 - Exibir todos os Apartamentos cadastrados \n"
+				    + "3 - Cadastrar Despesas \n"
+				    + "4 - Ver despesas \n"
+				    + "10 - Sair";
+        	
+        int op = 0;
+
+        do{
+            op = Integer.parseInt(JOptionPane.showInputDialog(null, menu));
+            
+            //Cadastrar Apartamentos
+            if(op == 1){
+                Apartamento ap = new Apartamento();
+                ap.cadastraAp();
+                apartamentos.add(ap);
+            }
+            
+            //Listar todos os apartamentos
+            if(op == 2){
+                String todosAp = "Apartamentos cadastrados: \n \n";
+                for (Apartamento ap: apartamentos){
+                 todosAp += ap.exibirAp();
+                } JOptionPane.showMessageDialog(null, todosAp);
+            }
+            
+        }while (op !=10);
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+
+    
+    }
+}
