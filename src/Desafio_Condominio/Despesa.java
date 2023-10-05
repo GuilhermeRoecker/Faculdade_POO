@@ -3,7 +3,8 @@ package Desafio_Condominio;
 import javax.swing.JOptionPane;
 
 public class Despesa {
-        private String nomeDespesa;
+    
+    private String nomeDespesa;
     private String mes;
     private int ano;
     private double valor;
