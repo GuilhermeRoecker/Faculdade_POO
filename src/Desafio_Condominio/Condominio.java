@@ -54,8 +54,8 @@ public class Condominio {
                 String mesEscolhido;
                 int anoEscolhido;
                 
-                anoEscolhido= Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano?"));
                 mesEscolhido= JOptionPane.showInputDialog(null, "Qual o mes?");
+                anoEscolhido= Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano?"));
                 String resultadoConsulta = "Despesas do mes de: " + mesEscolhido + "do Ano de: " + anoEscolhido + "\n";
 
                 //contabilizar apartamentos
@@ -78,11 +78,11 @@ public class Condominio {
             if(op == 5){
                 String mesEscolhido;
                 int anoEscolhido;
-                String proprietarioEscolhido;
+                int numeroApEscolhido;
                 
-                proprietarioEscolhido = JOptionPane.showInputDialog(null, "Qual o nome do Proprietario?");
-                anoEscolhido= Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano?"));
+                numeroApEscolhido = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o Apartamento?"));
                 mesEscolhido= JOptionPane.showInputDialog(null, "Qual o mes?");
+                anoEscolhido= Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano?"));
                 String resultadoConsulta = "Despesas do mes de: " + mesEscolhido + " do Ano de: " + anoEscolhido + "\n";
                 
 
@@ -100,7 +100,7 @@ public class Condominio {
                         int valorDespesas= desp.getValor();
                         int resultadoValor =valorDespesas  / qtdApartamento + valorAluguel ;
 
-                    if(mesEscolhido.equals(desp.getMes()) && anoEscolhido == desp.getAno() && proprietarioEscolhido.equals(ap.getNomeProprietario()) ){
+                    if(mesEscolhido.equals(desp.getMes()) && anoEscolhido == desp.getAno() && numeroApEscolhido == ap.getNumeroAp()){
                         JOptionPane.showMessageDialog(null, resultadoConsulta +
                         "Proprietario: " + ap.getNomeProprietario() + "\n" +
                         "Conta de: " + desp.getNomeDespesa() + "\n" +
