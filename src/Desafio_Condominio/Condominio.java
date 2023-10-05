@@ -48,6 +48,12 @@ public class Condominio {
             }
             // Solicitar o mês e o ano para pesquisa
             if (op == 4) {
+                
+               int QdtApartamento=0;
+                for(Apartamento ap: apartamentos){
+                    QdtApartamento++;
+                }
+                
 
             }   
         }while (op !=10);
