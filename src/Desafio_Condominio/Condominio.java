@@ -18,7 +18,7 @@ public class Condominio {
 				    + "3 - Cadastrar Despesas \n"
 				    + "4 - Ver despesas \n"
                     + "5 - Despesas por apartamento \n"
-				    + "10 - Sair";
+				    + "6 - Sair";
         	
         int op = 0;
 
@@ -111,6 +111,6 @@ public class Condominio {
             }
             
         //Encera o programa    
-        }while (op !=10);
+        }while (op !=6);
     }
 }
