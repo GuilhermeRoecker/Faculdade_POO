@@ -7,7 +7,7 @@ public class Despesa {
     private String nomeDespesa;
     private String mes;
     private int ano;
-    private double valor;
+    private int valor;
     
     public void cadastraDespesa(){
         setNomeDespesa(JOptionPane.showInputDialog(null, "Qual é a despesa?"));
@@ -42,11 +42,11 @@ public class Despesa {
         this.ano = ano;
     }
 
-    public double getValor() {
+    public int getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(int valor) {
         this.valor = valor;
     }
 }

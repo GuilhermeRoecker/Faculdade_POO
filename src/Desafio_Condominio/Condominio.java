@@ -46,17 +46,71 @@ public class Condominio {
                 desp.cadastraDespesa();
                 despesas.add(desp);
             }
-            // Solicitar o mês e o ano para pesquisa
+            
+            //Fazer consulta por mes e ano
             if (op == 4) {
                 
-               int QdtApartamento=0;
-                for(Apartamento ap: apartamentos){
-                    QdtApartamento++;
-                }
-                System.out.println(QdtApartamento);
+                //Solicitar o mês e o ano para pesquisa
+                String mesEscolhido;
+                int anoEscolhido;
+                
+                anoEscolhido= Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano?"));
+                mesEscolhido= JOptionPane.showInputDialog(null, "Qual o mes?");
+                String resultadoConsulta = "Despesas do mes de: " + mesEscolhido + "do Ano de: " + anoEscolhido + "\n";
 
-            }   
+                //contabilizar apartamentos
+                int qtdApartamento= 0;
+                for(Apartamento ap: apartamentos){
+                    qtdApartamento++;
+                }
+                
+                //Solicitar dados para fazer a consulta por mes e ano
+                for (Despesa desp: despesas){
+                    if(mesEscolhido.equals(desp.getMes()) && anoEscolhido == desp.getAno()){
+                        JOptionPane.showMessageDialog(null, resultadoConsulta +
+                        "Conta de: " + desp.getNomeDespesa() + "\n" +
+                        "Valor por Apartamento: " + (desp.getValor() / qtdApartamento));
+                    }
+                }
+            }
+            
+            //Fazer consulta por Apartamento, mes e ano
+            if(op == 5){
+                String mesEscolhido;
+                int anoEscolhido;
+                String proprietarioEscolhido;
+                
+                proprietarioEscolhido = JOptionPane.showInputDialog(null, "Qual o nome do Proprietario?");
+                anoEscolhido= Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o ano?"));
+                mesEscolhido= JOptionPane.showInputDialog(null, "Qual o mes?");
+                String resultadoConsulta = "Despesas do mes de: " + mesEscolhido + " do Ano de: " + anoEscolhido + "\n";
+                
+
+                //contabilizar apartamentos
+                int qtdApartamento=0;
+                for(Apartamento ap: apartamentos){
+                    qtdApartamento++;
+                }
+                
+                //Solicitar dados para fazer a consulta por Apartamento, mes e ano
+                for (Despesa desp: despesas){
+                    for(Apartamento ap: apartamentos){
+
+                        int valorAluguel = ap.calculaValor();
+                        int valorDespesas= desp.getValor();
+                        int resultadoValor =valorDespesas  / qtdApartamento + valorAluguel ;
+
+                    if(mesEscolhido.equals(desp.getMes()) && anoEscolhido == desp.getAno() && proprietarioEscolhido.equals(ap.getNomeProprietario()) ){
+                        JOptionPane.showMessageDialog(null, resultadoConsulta +
+                        "Proprietario: " + ap.getNomeProprietario() + "\n" +
+                        "Conta de: " + desp.getNomeDespesa() + "\n" +
+                        "Valor por Apartamento: " + resultadoValor );
+                        }
+                    }
+                }
+            }
+            
+        //Encera o programa    
         }while (op !=10);
     }
-    
 }
