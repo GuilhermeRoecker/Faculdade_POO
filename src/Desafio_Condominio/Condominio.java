@@ -53,7 +53,7 @@ public class Condominio {
                 for(Apartamento ap: apartamentos){
                     QdtApartamento++;
                 }
-                
+                System.out.println(QdtApartamento);
 
             }   
         }while (op !=10);
