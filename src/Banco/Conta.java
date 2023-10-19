@@ -10,7 +10,7 @@ public class Conta {
 
     public void cadastrarConta(){
         setNunConta(Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o numero da conta?")));
-        setAgencia(Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o numero a agendcia?")));
+        setAgencia(Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o numero a agencia?")));
         setNomeCorrentista(JOptionPane.showInputDialog(null, "Qual o nome do Correntista?"));
         setSaldoConta(Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o saldo inicial da conta?")));
     }
