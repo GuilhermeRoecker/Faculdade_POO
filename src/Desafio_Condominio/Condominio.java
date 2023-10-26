@@ -18,7 +18,9 @@ public class Condominio {
 				    + "3 - Cadastrar Despesas \n"
 				    + "4 - Ver despesas \n"
                     + "5 - Despesas por apartamento \n"
-				    + "6 - Sair";
+                    + "6 - Trocar proprietario apartamento \n"
+                    + "7 - Trocar Proprietario apartamento \n"
+				    + "10 - Sair";
         	
         int op = 0;
 
@@ -109,8 +111,39 @@ public class Condominio {
                     }
                 }
             }
+
+            if(op ==6){
+
+                for(Apartamento ap : apartamentos){
+
+                String novoProprietario = JOptionPane.showInputDialog(null, "Qual o nome do novo proprietario?");
+                int numeroApEscolhido = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual o numero do apartamento?"));
+                String blocoApEscolhido = JOptionPane.showInputDialog(null, "Qual o bloco do apartamento?");
+
+                if(numeroApEscolhido == ap.getNumeroAp() && blocoApEscolhido.equals(ap.getBloco())){
+                    ap.setNomeProprietario(novoProprietario);
+                    }
+                }
+            }
+
+            if (op == 7) {
+                int posicaoEscolhida = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a posição do apartamento?"));
             
+                if (posicaoEscolhida >= 0 && posicaoEscolhida < apartamentos.size()) {
+                    String novoProprietario = JOptionPane.showInputDialog(null, "Qual o nome do novo proprietário?");
+                    Apartamento ap = apartamentos.get(posicaoEscolhida);
+                    ap.setNomeProprietario(novoProprietario);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Posição inválida. Digite uma posição dentro do intervalo.");
+                }
+            }
+        
+            if (apartamentos.size() == 2) {
+            apartamentos.remove(0); 
+        }
+    
         //Encera o programa    
-        }while (op !=6);
+        }while (op !=10);
+
     }
 }
