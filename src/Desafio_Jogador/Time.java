@@ -21,9 +21,9 @@ public class Time {
         }while(!continua.equalsIgnoreCase("N"));
     }
 
-    public Jogador exibirJogador(){
-        return getNomeJogador() + "\n";
-    }
+  //  public Jogador exibirJogador(){
+    //    return getNomeJogador() + "\n";
+    //}
 
     public String getNomeTime() {
         return this.nomeTime;

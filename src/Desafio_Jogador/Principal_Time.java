@@ -25,7 +25,7 @@ public class Principal_Time {
                 t.CadastraTime();
                 times.add(t);
             }
-
+/* 
             if(op ==2){
                 String escolheTime = JOptionPane.showInputDialog("Qual o time?");
                 String todosJogadors= "Jogadors \n\n";
@@ -35,6 +35,8 @@ public class Principal_Time {
                         }
                 }                
             }
+                    
+            */
         } while (op != 5);
     }
 }
